@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+package Identity;
+
+enum Status {
+    STATUS_SUCCESS = 0;
+    STATUS_FAILURE = 1;
+}
+
+message ClientCredentials {
+    string username = 1;
+    string password = 2;
+}
+
+message ClientTokens {
+    Status status = 1;
+    Success success = 2;
+    Failure failure = 3;
+
+    message Success {
+        string access_token = 1;
+    }
+
+    message Failure {
+        string reason = 1;
+    }
+}
+
+message WorldCredentials {
+    string name = 1;
+    string password = 2;
+    string ip = 3;
+    string port = 4;
+}
+
+message WorldTokens {
+    Status status = 1;
+    Success success = 2;
+    Failure failure = 3;
+
+    message Success {
+        string access_token = 1;
+    }
+
+    message Failure {
+        string reason = 1;
+    }
+}
+
+message GameCredentials {
+    string name = 1;
+    string password = 2;
+    string ip = 3;
+    string port = 4;
+}
+
+message GameTokens {
+    Status status = 1;
+    Success success = 2;
+    Failure failure = 3;
+
+    message Success {
+        string access_token = 1;
+    }
+
+    message Failure {
+        string reason = 1;
+    }
+}
+
+message Nothing {}
+
+service Auth {
+    rpc Client(ClientCredentials) returns (ClientTokens);
+    rpc World(WorldCredentials) returns (WorldTokens);
+    rpc Game(GameCredentials) returns (GameTokens);
+}
