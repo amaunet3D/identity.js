@@ -6,8 +6,13 @@ const setupAuthService = server => server.addService(presentation.setupGrpc.serv
   Game: presentation.authGame.controller,
 })
 
+const setupHealthService = server => server.addService(presentation.setupGrpc.services.health().service, {
+  Ping: presentation.pingGrpc.controller
+})
+
 const setup = server => {
   setupAuthService(server)
+  setupHealthService(server)
 }
 
 export const routes = { setup }

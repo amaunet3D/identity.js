@@ -1,4 +1,5 @@
 import { domain } from 'src/domain'
+import { map, toArray, zip } from 'rxjs'
 
 const getDomainHealth = () => ({
   component: 'domain',
@@ -7,8 +8,9 @@ const getDomainHealth = () => ({
 })
 
 export const command = (...layers) => {
-  const others = domain.core.map(layers, getHealth => getHealth())
+  const executeLayer = getHealth => getHealth().pipe(toArray())
 
-  return [getDomainHealth(), ...domain.core.flatten(others)]
-
+  return zip(domain.core.lodash.map(layers, executeLayer))
+    .pipe(map(domain.core.lodash.flatten))
+    .pipe(map(others => [...others, getDomainHealth()]))
 }

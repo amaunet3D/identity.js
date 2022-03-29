@@ -9,4 +9,10 @@ const auth = () => {
   return grpc.loadPackageDefinition(definition)['Identity']['Auth']
 }
 
-export const services = { auth }
+const health = () => {
+  const definition = loader.loadSync(makePath('health.proto'))
+
+  return grpc.loadPackageDefinition(definition)['Identity']['Health']
+}
+
+export const services = { auth, health }

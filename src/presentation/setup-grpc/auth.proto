@@ -68,8 +68,6 @@ message GameTokens {
     }
 }
 
-message Nothing {}
-
 service Auth {
     rpc Client(ClientCredentials) returns (ClientTokens);
     rpc World(WorldCredentials) returns (WorldTokens);

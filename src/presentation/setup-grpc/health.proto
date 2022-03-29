@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Identity;
+
+message Nothing {}
+
+service Health {
+    rpc Ping(Nothing) returns (Nothing);
+}

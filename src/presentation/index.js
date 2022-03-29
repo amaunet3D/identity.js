@@ -1,4 +1,5 @@
 import { authGame } from 'src/presentation/auth-game'
+import { pingGrpc } from 'src/presentation/ping-grpc'
 import { setupRest } from 'src/presentation/setup-rest'
 import { setupGrpc } from 'src/presentation/setup-grpc'
 import { getHealth } from 'src/presentation/get-health'
@@ -14,4 +15,5 @@ export const presentation = {
   authWorld,
   setupGrpc,
   setupRest,
+  pingGrpc,
 }
