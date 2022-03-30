@@ -3,10 +3,13 @@ import { pingGrpc } from 'src/ping-grpc'
 import { authGame } from 'src/auth-game'
 import { setupRest } from 'src/setup-rest'
 import { setupGrpc } from 'src/setup-grpc'
+import { setupMaps } from 'src/setup-maps'
 import { authWorld } from 'src/auth-world'
 import { getHealth } from 'src/get-health'
 import { authClient } from 'src/auth-client'
 import { getVersion } from 'src/get-version'
+
+setupMaps()
 
 export const identity = {
   core,
@@ -18,6 +21,7 @@ export const identity = {
   pingGrpc,
   setupGrpc,
   setupRest,
+  setupMaps,
 }
 
 identity.setupGrpc()
