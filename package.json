@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@swc/core": "1.2.156",
-    "cli": "1.0.1",
+    "arg": "5.0.1",
     "concurrently": "7.0.0",
     "copy-webpack-plugin": "10.2.4",
     "nodemon": "2.0.15",
