@@ -1029,6 +1029,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cli@npm:1.0.1":
+  version: 1.0.1
+  resolution: "cli@npm:1.0.1"
+  dependencies:
+    exit: 0.1.2
+    glob: ^7.1.1
+  checksum: c47cdbb3b87696e45cc07340e415b5863b20833ae8184ca8a0b1d732fbd908f6e6e13376e4a509685af1bc916afbb3e2a0adf1eec8797575eefe63c7bb516962
+  languageName: node
+  linkType: hard
+
 "cliui@npm:^7.0.2":
   version: 7.0.4
   resolution: "cliui@npm:7.0.4"
@@ -1500,6 +1510,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"exit@npm:0.1.2":
+  version: 0.1.2
+  resolution: "exit@npm:0.1.2"
+  checksum: abc407f07a875c3961e4781dfcb743b58d6c93de9ab263f4f8c9d23bb6da5f9b7764fc773f86b43dd88030444d5ab8abcb611cb680fba8ca075362b77114bba3
+  languageName: node
+  linkType: hard
+
 "express@npm:4.17.3":
   version: 4.17.3
   resolution: "express@npm:4.17.3"
@@ -1744,7 +1761,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.2.0":
+"glob@npm:^7.1.1, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.2.0":
   version: 7.2.0
   resolution: "glob@npm:7.2.0"
   dependencies:
@@ -1926,6 +1943,7 @@ __metadata:
     "@grpc/grpc-js": 1.5.9
     "@grpc/proto-loader": 0.6.9
     "@swc/core": 1.2.156
+    cli: 1.0.1
     concurrently: 7.0.0
     copy-webpack-plugin: 10.2.4
     express: 4.17.3
@@ -1937,6 +1955,7 @@ __metadata:
     rxjs: 7.5.5
     source-map-support: 0.5.21
     swc-loader: 0.1.15
+    uuid: 8.3.2
     webpack: 5.70.0
     webpack-cli: 4.9.2
     webpack-merge: 5.8.0
@@ -3773,6 +3792,15 @@ __metadata:
   version: 1.0.1
   resolution: "utils-merge@npm:1.0.1"
   checksum: c81095493225ecfc28add49c106ca4f09cdf56bc66731aa8dabc2edbbccb1e1bfe2de6a115e5c6a380d3ea166d1636410b62ef216bb07b3feb1cfde1d95d5080
+  languageName: node
+  linkType: hard
+
+"uuid@npm:8.3.2":
+  version: 8.3.2
+  resolution: "uuid@npm:8.3.2"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 5575a8a75c13120e2f10e6ddc801b2c7ed7d8f3c8ac22c7ed0c7b2ba6383ec0abda88c905085d630e251719e0777045ae3236f04c812184b7c765f63a70e58df
   languageName: node
   linkType: hard
 
