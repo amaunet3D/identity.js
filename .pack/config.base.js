@@ -9,7 +9,7 @@ module.exports = {
           loader: 'swc-loader',
           options: {
             jsc: {
-              target: "es2021"
+              target: 'es2021'
             }
           }
         }
@@ -29,8 +29,8 @@ module.exports = {
   },
   externals: [
     require('webpack-node-externals')(),
-],
-plugins: [
+  ],
+  plugins: [
     new (require('copy-webpack-plugin'))({
       patterns: [
         {
@@ -42,6 +42,11 @@ plugins: [
           from: 'env',
           to: 'env/[name][ext]',
           filter: path => path.includes('settings.')
+        },
+        {
+          from: 'src',
+          to: 'db/migrations/[name][ext]',
+          filter: path => path.match('(.*?)migrations(.*?).cypher')
         }
       ]
     }),
