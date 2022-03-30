@@ -1,0 +1,1 @@
+CREATE (:Credentials) RETURN TRUE

@@ -11,7 +11,7 @@ const MIGRATION_NAME = `${MIGRATION_ID}-${args['--name']}`
 
 const MIGRATION_CONTENT = `export const execute = () => {}
 
-execute.id = () => '${MIGRATION_ID}'
+export const id = () => '${MIGRATION_ID}'
 `
 
 fs.writeFileSync(`${MIGRATIONS_FOLDER}/${MIGRATION_NAME}.cypher`, '')
