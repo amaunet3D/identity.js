@@ -3,12 +3,24 @@ services:
     image: 'node:16.14'
     container_name: nemesis3D.identity
     working_dir: /srv/nemesis3D/identity
+    depends_on:
+      - neo4j
     ports:
       - '5000:5000'
       - '5001:5001'
     volumes:
       - .:/srv/nemesis3D/identity
     command: 'yarn dev'
+
+  neo4j:
+    image: 'neo4j:4.4.5-enterprise'
+    container_name: nemesis3D.identity.neo4j
+    environment:
+      - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
+      - NEO4J_AUTH=neo4j/admin
+    ports:
+      - '7474:7474'
+      - '7687:7687'
 
   deps:
     image: 'node:16.14'

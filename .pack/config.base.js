@@ -52,4 +52,3 @@ plugins: [
     clean: true,
   }
 }
-
