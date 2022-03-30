@@ -21,6 +21,7 @@ module.exports = {
     ],
     alias: {
       src: require('path').resolve(__dirname, '..', 'src'),
+      env: require('path').resolve(__dirname, '..', 'env'),
     },
     fallback: {}
   },
