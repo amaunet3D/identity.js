@@ -1,0 +1,35 @@
+services:
+  dev:
+    image: 'node:16.14'
+    container_name: nemesis3D.identity
+    working_dir: /srv/nemesis3D/identity
+    ports:
+      - '5000:5000'
+      - '5001:5001'
+    volumes:
+      - .:/srv/nemesis3D/identity
+    command: 'yarn dev'
+
+  deps:
+    image: 'node:16.14'
+    container_name: nemesis3D.identity.deps
+    working_dir: /srv/nemesis3D/identity
+    volumes:
+      - .:/srv/nemesis3D/identity
+    command: 'yarn install'
+
+  build:
+    image: 'node:16.14'
+    container_name: nemesis3D.identity.build
+    working_dir: /srv/nemesis3D/identity
+    volumes:
+      - .:/srv/nemesis3D/identity
+    command: 'yarn build'
+
+  lint:
+    image: 'node:16.14'
+    container_name: nemesis3D.identity.lint
+    working_dir: /srv/nemesis3D/identity
+    volumes:
+      - .:/srv/nemesis3D/identity
+    command: 'yarn lint:fix'
