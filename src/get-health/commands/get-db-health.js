@@ -2,7 +2,7 @@ import { of } from 'rxjs'
 import { identity } from 'src'
 
 export const getDbHealth = () => of({
-  component: 'data',
+  component: 'database',
   status: identity.getHealth.STATUS.up,
   duration: '...'
 })
