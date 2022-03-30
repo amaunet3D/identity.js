@@ -6,7 +6,12 @@ module.exports = {
         test: /\.(js|jsx|mjs)$/,
         exclude: /\(.yarn\)/,
         use: {
-          loader: 'swc-loader'
+          loader: 'swc-loader',
+          options: {
+            jsc: {
+              target: "es2021"
+            }
+          }
         }
       },
     ]
@@ -22,11 +27,10 @@ module.exports = {
     },
     fallback: {}
   },
-  externals: {
-    '@grpc/proto-loader': 'commonjs @grpc/proto-loader',
-    '@grpc/grpc-js': 'commonjs @grpc/grpc-js'
-  },
-  plugins: [
+  externals: [
+    require('webpack-node-externals')(),
+],
+plugins: [
     new (require('copy-webpack-plugin'))({
       patterns: [
         {
