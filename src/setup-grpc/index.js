@@ -11,7 +11,7 @@ const setupServer = server => () => {
 
   server.start()
 
-  console.log(`Grpc server listening on ${PORT}...`)
+  console.log(`Grpc server is listening on ${PORT}...`)
 }
 
 export const setupGrpc = () => {

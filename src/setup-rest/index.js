@@ -8,5 +8,5 @@ export const setupRest = () => {
 
   routes.setup(server)
 
-  server.listen(PORT, () => console.log(`Rest server listening on 0.0.0.0:${PORT}...`))
+  server.listen(PORT, () => console.log(`Rest server is listening on 0.0.0.0:${PORT}...`))
 }
