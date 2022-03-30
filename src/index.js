@@ -8,6 +8,7 @@ import { authWorld } from 'src/auth-world'
 import { getHealth } from 'src/get-health'
 import { authClient } from 'src/auth-client'
 import { getVersion } from 'src/get-version'
+import { getSettings } from 'src/get-settings'
 
 setupMaps()
 
@@ -22,6 +23,7 @@ export const identity = {
   setupGrpc,
   setupRest,
   setupMaps,
+  getSettings,
 }
 
 identity.setupGrpc()
