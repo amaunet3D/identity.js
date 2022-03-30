@@ -4,7 +4,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx|mjs)$/,
-        exclude: /\(node_modules\)/,
+        exclude: /\(.yarn\)/,
         use: {
           loader: 'swc-loader'
         }
@@ -16,18 +16,16 @@ module.exports = {
       '*',
       '.js',
     ],
-    modules: [
-      'node_modules'
-    ],
     alias: {
       src: require('path').resolve(__dirname, '..', 'src'),
       env: require('path').resolve(__dirname, '..', 'env'),
     },
     fallback: {}
   },
-  externals: [
-    require('webpack-node-externals')()
-  ],
+  externals: {
+    '@grpc/proto-loader': 'commonjs @grpc/proto-loader',
+    '@grpc/grpc-js': 'commonjs @grpc/grpc-js'
+  },
   plugins: [
     new (require('copy-webpack-plugin'))({
       patterns: [
