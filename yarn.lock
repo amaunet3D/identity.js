@@ -5,6 +5,15 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@babel/runtime@npm:^7.5.5":
+  version: 7.17.8
+  resolution: "@babel/runtime@npm:7.17.8"
+  dependencies:
+    regenerator-runtime: ^0.13.4
+  checksum: 68d195c1630bb91ac20e86635d292a17ebab7f361cfe79406b3f5a6cc2e59fa283ae5006568899abf869312c2b35b744bd407aea8ffdb650f1a68d07785d47e9
+  languageName: node
+  linkType: hard
+
 "@discoveryjs/json-ext@npm:^0.5.0":
   version: 0.5.7
   resolution: "@discoveryjs/json-ext@npm:0.5.7"
@@ -788,6 +797,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"base64-js@npm:^1.3.1":
+  version: 1.5.1
+  resolution: "base64-js@npm:1.5.1"
+  checksum: 669632eb3745404c2f822a18fc3a0122d2f9a7a13f7fb8b5823ee19d1d2ff9ee5b52c53367176ea4ad093c332fd5ab4bd0ebae5a8e27917a4105a4cfc86b1005
+  languageName: node
+  linkType: hard
+
 "big.js@npm:^5.2.2":
   version: 5.2.2
   resolution: "big.js@npm:5.2.2"
@@ -874,6 +890,16 @@ __metadata:
   version: 1.1.2
   resolution: "buffer-from@npm:1.1.2"
   checksum: 0448524a562b37d4d7ed9efd91685a5b77a50672c556ea254ac9a6d30e3403a517d8981f10e565db24e8339413b43c97ca2951f10e399c6125a0d8911f5679bb
+  languageName: node
+  linkType: hard
+
+"buffer@npm:^6.0.3":
+  version: 6.0.3
+  resolution: "buffer@npm:6.0.3"
+  dependencies:
+    base64-js: ^1.3.1
+    ieee754: ^1.2.1
+  checksum: 5ad23293d9a731e4318e420025800b42bf0d264004c0286c8cc010af7a270c7a0f6522e84f54b9ad65cbd6db20b8badbfd8d2ebf4f80fa03dab093b89e68c3f9
   languageName: node
   linkType: hard
 
@@ -1904,6 +1930,7 @@ __metadata:
     copy-webpack-plugin: 10.2.4
     express: 4.17.3
     lodash: 4.17.21
+    neo4j-driver: 4.4.5
     nodemon: 2.0.15
     ramda: 0.28.0
     regenerator-runtime: 0.13.9
@@ -1916,6 +1943,13 @@ __metadata:
     webpack-node-externals: 3.0.0
   languageName: unknown
   linkType: soft
+
+"ieee754@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "ieee754@npm:1.2.1"
+  checksum: 5144c0c9815e54ada181d80a0b810221a253562422e7c6c3a60b1901154184f49326ec239d618c416c1c5945a2e197107aee8d986a3dd836b53dffefd99b5e7e
+  languageName: node
+  linkType: hard
 
 "ignore-by-default@npm:^1.0.1":
   version: 1.0.1
@@ -2562,6 +2596,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"neo4j-driver-bolt-connection@npm:^4.4.5":
+  version: 4.4.5
+  resolution: "neo4j-driver-bolt-connection@npm:4.4.5"
+  dependencies:
+    buffer: ^6.0.3
+    neo4j-driver-core: ^4.4.5
+    string_decoder: ^1.3.0
+  checksum: 35accd3c76ac34c9814bcf5415376649506799e78f9d415c2ef8e118acc09f3dbc6bf7347ac189b30d4051ad79da4cf2bebe0340b513a780c590d99297be4b3c
+  languageName: node
+  linkType: hard
+
+"neo4j-driver-core@npm:^4.4.5":
+  version: 4.4.5
+  resolution: "neo4j-driver-core@npm:4.4.5"
+  checksum: 4c1f8caf95442986f6554f8c437428bfbb774a84c8550b3e8879c65287bb31c9b2bc8207ec353c7b268968448f896a65673c0794f1a4f9c1f186b74ae3e477ea
+  languageName: node
+  linkType: hard
+
+"neo4j-driver@npm:4.4.5":
+  version: 4.4.5
+  resolution: "neo4j-driver@npm:4.4.5"
+  dependencies:
+    "@babel/runtime": ^7.5.5
+    neo4j-driver-bolt-connection: ^4.4.5
+    neo4j-driver-core: ^4.4.5
+    rxjs: ^6.6.3
+  checksum: 9162ac5fca3d33f84399ad2b98e98ed616189400a0f919d121a81501e4b7644ae29418303f2f8d005c5e0c176004a63f6c7a4061adc2eecc7f041e3b755f7647
+  languageName: node
+  linkType: hard
+
 "node-gyp@npm:latest":
   version: 9.0.0
   resolution: "node-gyp@npm:9.0.0"
@@ -3001,7 +3065,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regenerator-runtime@npm:0.13.9":
+"regenerator-runtime@npm:0.13.9, regenerator-runtime@npm:^0.13.4":
   version: 0.13.9
   resolution: "regenerator-runtime@npm:0.13.9"
   checksum: 65ed455fe5afd799e2897baf691ca21c2772e1a969d19bb0c4695757c2d96249eb74ee3553ea34a91062b2a676beedf630b4c1551cc6299afb937be1426ec55e
@@ -3399,7 +3463,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"string_decoder@npm:^1.1.1":
+"string_decoder@npm:^1.1.1, string_decoder@npm:^1.3.0":
   version: 1.3.0
   resolution: "string_decoder@npm:1.3.0"
   dependencies:
