@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "concurrently \"yarn dev:transpile\" \"yarn dev:server\"",
-    "dev:server": "nodemon -w .dist -e js,proto .dist/main.js",
+    "dev:server": "nodemon -w .dist -e js,proto,json .dist/main.js",
     "dev:transpile": "webpack -c .pack/config.dev.js"
   },
   "dependencies": {
