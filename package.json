@@ -5,9 +5,10 @@
   "license": "MIT",
   "packageManager": "yarn@3.2.0",
   "scripts": {
-    "dev": "concurrently \"yarn dev:transpile\" \"yarn dev:server\"",
+    "dev": "yarn dev:transpile:once && concurrently \"yarn dev:transpile\" \"yarn dev:server\"",
     "dev:server": "nodemon -w .dist -e js,proto,json .dist/main.js",
-    "dev:transpile": "webpack -c .pack/config.dev.js"
+    "dev:transpile": "webpack -c .pack/config.dev.js",
+    "dev:transpile:once": "webpack -c .pack/config.dev.js --no-watch"
   },
   "dependencies": {
     "@grpc/grpc-js": "1.5.9",
