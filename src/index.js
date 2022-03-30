@@ -10,8 +10,6 @@ import { authClient } from 'src/auth-client'
 import { getVersion } from 'src/get-version'
 import { getSettings } from 'src/get-settings'
 
-setupMaps()
-
 export const identity = {
   core,
   authGame,
@@ -26,5 +24,6 @@ export const identity = {
   getSettings,
 }
 
+identity.setupMaps()
 identity.setupGrpc()
 identity.setupRest()
