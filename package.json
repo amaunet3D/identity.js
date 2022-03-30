@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": ".dist/main.js",
   "license": "MIT",
+  "packageManager": "yarn@3.2.0",
   "scripts": {
     "dev": "concurrently \"yarn dev:transpile\" \"yarn dev:server\"",
     "dev:server": "nodemon -w .dist -e js,proto,json .dist/main.js",
