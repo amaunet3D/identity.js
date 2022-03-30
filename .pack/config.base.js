@@ -34,6 +34,11 @@ module.exports = {
           from: 'src',
           to: 'proto/[name][ext]',
           filter: path => path.endsWith('.proto')
+        },
+        {
+          from: 'env',
+          to: 'env/[name][ext]',
+          filter: path => path.includes('settings.')
         }
       ]
     }),
