@@ -1,5 +1,4 @@
 import { repositories } from 'src/migrate-db/repositories'
-import { makeQueryFor } from 'src/migrate-db/commands/make-query-for'
 import { executeMigration } from 'src/migrate-db/commands/execute-migration'
 
 export const migrateDb = () => {
@@ -11,4 +10,3 @@ export const migrateDb = () => {
 }
 
 migrateDb.repositories = repositories
-migrateDb.makeQueryFor = makeQueryFor
