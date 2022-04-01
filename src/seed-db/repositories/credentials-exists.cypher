@@ -4,7 +4,6 @@ MATCH (credentials:Credentials)
   credentials.password = $parameter.password
 RETURN
   {
-    id:       credentials.id,
-    username: credentials.username,
-    password: credentials.password
+    exists: count(credentials) > 0
   }
+

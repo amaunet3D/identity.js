@@ -1,4 +1,4 @@
-import { identity, lodash } from 'src'
+import { identity } from 'src'
 import createQuery from 'src/seed-db/repositories/create-credentials.cypher'
 import existsQuery from 'src/seed-db/repositories/credentials-exists.cypher'
 
@@ -8,8 +8,7 @@ const create = credentials => identity.core
 
 const exists = credentials => identity.core.dbStorage
   .executeQuery(existsQuery, { parameter: credentials })
-  .then(!lodash.isEmpty)
-  .catch(() => false)
+  .then(([result]) => result?.exists)
 
 export const credentials = {
   exists,
