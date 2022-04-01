@@ -11,5 +11,5 @@ export const getAllHealth = () => {
 
   return rxjs
     .zip(lodash.map(components(), executeLayer))
-    .pipe(map(lodash.flatten))
+    .pipe(rxjs.map(lodash.flatten))
 }
