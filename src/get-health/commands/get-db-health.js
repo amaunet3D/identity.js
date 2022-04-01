@@ -1,7 +1,6 @@
-import { of } from 'rxjs'
-import { identity } from 'src'
+import { identity, rxjs } from 'src'
 
-export const getDbHealth = () => of({
+export const getDbHealth = () => rxjs.of({
   component: 'database',
   status: identity.getHealth.STATUS.up,
   duration: '...'

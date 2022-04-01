@@ -1,4 +1,5 @@
 import { core } from 'src/core'
+import { seedDb } from 'src/seed-db'
 import { pingGrpc } from 'src/ping-grpc'
 import { authGame } from 'src/auth-game'
 import { setupRest } from 'src/setup-rest'
@@ -24,9 +25,18 @@ export const identity = {
   setupMaps,
   getSettings,
   migrateDb,
+  seedDb
 }
 
+export const rxjs = identity.core.rxjs
+
+export const ramda = identity.core.ramda
+
+export const lodash = identity.core.lodash
+
 identity.setupMaps()
-identity.setupGrpc()
-identity.setupRest()
+
 identity.migrateDb()
+  .then(identity.seedDb)
+  .then(identity.setupGrpc)
+  .then(identity.setupRest)

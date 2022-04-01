@@ -27,6 +27,7 @@
     "arg": "5.0.1",
     "concurrently": "7.0.0",
     "copy-webpack-plugin": "10.2.4",
+    "cypher-loader": "0.3.0",
     "nodemon": "2.0.15",
     "regenerator-runtime": "0.13.9",
     "source-map-support": "0.5.21",

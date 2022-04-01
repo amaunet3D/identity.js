@@ -1,7 +1,7 @@
-import { Subject } from 'rxjs'
+import { rxjs } from 'src'
 
 export const discuss = service => (rpc, message) => {
-  const subject = new Subject(message)
+  const subject = new rxjs.Subject(message)
   const stream = service[rpc]()
 
   stream.on('data', message => subject.next({ message, stream }))

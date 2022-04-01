@@ -1,5 +1,4 @@
-import { map } from 'rxjs'
-import { identity } from 'src'
+import { identity, rxjs } from 'src'
 
 const makeSuccess = () => ({
   component: 'grpc-server',
@@ -20,4 +19,4 @@ const chooseResult = result => ({
 
 export const getGrpcHealth = () => identity.getHealth.repositories.grpc
   .ping()
-  .pipe(map(chooseResult))
+  .pipe(rxjs.map(chooseResult))

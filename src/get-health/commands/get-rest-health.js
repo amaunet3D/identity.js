@@ -1,7 +1,6 @@
-import { of } from 'rxjs'
-import { identity } from 'src'
+import { identity, rxjs } from 'src'
 
-export const getRestHealth = () => of({
+export const getRestHealth = () => rxjs.of({
   component: 'rest-server',
   status: identity.getHealth.STATUS.up,
   duration: '...'

@@ -1,23 +1,14 @@
 import { identity } from 'src'
+import getQuery from 'src/migrate-db/repositories/get-migration.cypher'
+import storeQuery from 'src/migrate-db/repositories/store-migration.cypher'
 
-const RESOURCE_NAME = Object.freeze({
-  get: '0000000000000-get-migration.cypher',
-  insert: '0000000000000-store-migration.cypher'
-})
+const get = migrationId => identity.core
+  .dbStorage
+  .executeQuery(getQuery, { parameter: { id: migrationId } })
 
-const get = migrationId => {
-  const query = identity.core.resourceStorage.getContent(RESOURCE_NAME.get)
-  const payload = { parameter: { id: migrationId } }
-
-  return identity.core.dbStorage.executeQuery(query, payload)
-}
-
-const insert = migrationId => {
-  const query = identity.core.resourceStorage.getContent(RESOURCE_NAME.insert)
-  const payload = { entity: { id: migrationId } }
-
-  return identity.core.dbStorage.executeQuery(query, payload)
-}
+const insert = migrationId => identity.core
+  .dbStorage
+  .executeQuery(storeQuery, { entity: { id: migrationId } })
 
 export const migration = {
   get,

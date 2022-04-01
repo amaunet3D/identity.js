@@ -1,5 +1,4 @@
-import { identity } from 'src'
-import { map, toArray, zip } from 'rxjs'
+import { identity, rxjs, lodash } from 'src'
 
 const components = () => [
   identity.getHealth.commands.getGrpcHealth,
@@ -8,8 +7,9 @@ const components = () => [
 ]
 
 export const getAllHealth = () => {
-  const executeLayer = getHealth => getHealth().pipe(toArray())
+  const executeLayer = getHealth => getHealth().pipe(rxjs.toArray())
 
-  return zip(identity.core.lodash.map(components(), executeLayer))
-    .pipe(map(identity.core.lodash.flatten))
+  return rxjs
+    .zip(lodash.map(components(), executeLayer))
+    .pipe(map(lodash.flatten))
 }

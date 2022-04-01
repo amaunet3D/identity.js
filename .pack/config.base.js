@@ -14,6 +14,13 @@ module.exports = {
           }
         }
       },
+      {
+        test: /\.(cypher)$/,
+        exclude: /\(.yarn\)/,
+        use: {
+          loader: 'cypher-loader',
+        }
+      },
     ]
   },
   resolve: {
@@ -43,11 +50,6 @@ module.exports = {
           to: 'env/[name][ext]',
           filter: path => path.includes('settings.')
         },
-        {
-          from: 'src',
-          to: 'db/migrations/[name][ext]',
-          filter: path => path.match('(.*?)migrations(.*?).cypher')
-        }
       ]
     }),
   ],

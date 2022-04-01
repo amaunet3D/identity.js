@@ -1223,6 +1223,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cypher-loader@npm:0.3.0":
+  version: 0.3.0
+  resolution: "cypher-loader@npm:0.3.0"
+  dependencies:
+    decypher: ^0.x.x
+  checksum: 0110d72ef0ee720d78309806bb857521c77902d36e553cde0f526174749bab3eea2d00912a1c1719774c79a8263a670b1676b4cf6f0704a07bee34ff06a025dc
+  languageName: node
+  linkType: hard
+
 "date-fns@npm:^2.16.1":
   version: 2.28.0
   resolution: "date-fns@npm:2.28.0"
@@ -1266,6 +1275,16 @@ __metadata:
   dependencies:
     mimic-response: ^1.0.0
   checksum: 952552ac3bd7de2fc18015086b09468645c9638d98a551305e485230ada278c039c91116e946d07894b39ee53c0f0d5b6473f25a224029344354513b412d7380
+  languageName: node
+  linkType: hard
+
+"decypher@npm:^0.x.x":
+  version: 0.13.0
+  resolution: "decypher@npm:0.13.0"
+  dependencies:
+    escape-regexp: 0.0.1
+    graphology: ^0.7.0
+  checksum: 17839925945a18defcfa2b1acc89f1e4e99ef37a9efedd069b842f4abf5d27b108864924dc1abd4f26639012d1fd68beeba207a4930013e2be9ad3e0072e6452
   languageName: node
   linkType: hard
 
@@ -1443,6 +1462,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"escape-regexp@npm:0.0.1":
+  version: 0.0.1
+  resolution: "escape-regexp@npm:0.0.1"
+  checksum: abb22ce7a1df640c128abf590d954e6bc4f34915dc9d48597cfc1c5047d60925a35c5eed2bb2f92c1810055c4b17075e6b85ca8b563047f1020d15813a4709dd
+  languageName: node
+  linkType: hard
+
 "eslint-scope@npm:5.1.1":
   version: 5.1.1
   resolution: "eslint-scope@npm:5.1.1"
@@ -1480,6 +1506,13 @@ __metadata:
   version: 1.8.1
   resolution: "etag@npm:1.8.1"
   checksum: 571aeb3dbe0f2bbd4e4fadbdb44f325fc75335cd5f6f6b6a091e6a06a9f25ed5392f0863c5442acb0646787446e816f13cbfc6edce5b07658541dff573cab1ff
+  languageName: node
+  linkType: hard
+
+"events@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "events@npm:1.1.1"
+  checksum: 40431eb005cc4c57861b93d44c2981a49e7feb99df84cf551baed299ceea4444edf7744733f6a6667e942af687359b1f4a87ec1ec4f21d5127dac48a782039b9
   languageName: node
   linkType: hard
 
@@ -1814,6 +1847,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"graphology@npm:^0.7.0":
+  version: 0.7.1
+  resolution: "graphology@npm:0.7.1"
+  dependencies:
+    events: ^1.1.1
+  checksum: db59fc5e33cb0dbe38c5f23dafe20ea9e81e65792125ca235fe6b18d04ec69d239702fea0d35a7ba20005af5860c82348a353756f73885968653f91d81ed3a48
+  languageName: node
+  linkType: hard
+
 "has-flag@npm:^3.0.0":
   version: 3.0.0
   resolution: "has-flag@npm:3.0.0"
@@ -1936,6 +1978,7 @@ __metadata:
     arg: 5.0.1
     concurrently: 7.0.0
     copy-webpack-plugin: 10.2.4
+    cypher-loader: 0.3.0
     express: 4.17.3
     glob: 7.2.0
     lodash: 4.17.21

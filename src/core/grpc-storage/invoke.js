@@ -1,4 +1,4 @@
-import { Subject } from 'rxjs'
+import { rxjs } from 'src'
 
 const handleResult = subject => (error, response) => {
   if (error) subject.error(error)
@@ -8,7 +8,7 @@ const handleResult = subject => (error, response) => {
 }
 
 export const invoke = service => (rpc, message) => {
-  const subject = new Subject()
+  const subject = new rxjs.Subject()
 
   service[rpc](message, handleResult(subject))
 
