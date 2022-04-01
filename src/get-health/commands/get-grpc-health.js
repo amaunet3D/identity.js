@@ -3,13 +3,11 @@ import { identity, rxjs } from 'src'
 const makeSuccess = () => ({
   component: 'grpc-server',
   status: identity.getHealth.STATUS.up,
-  duration: '...'
 })
 
 const makeFailure = () => ({
   component: 'grpc-server',
   status: identity.getHealth.STATUS.down,
-  duration: '...',
 })
 
 const chooseResult = result => ({
