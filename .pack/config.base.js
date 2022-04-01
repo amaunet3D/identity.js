@@ -48,7 +48,7 @@ module.exports = {
         {
           from: 'env',
           to: 'env/[name][ext]',
-          filter: path => path.includes('settings.')
+          filter: path => path.endsWith('.json')
         },
       ]
     }),
